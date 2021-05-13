@@ -6,12 +6,12 @@ package com.consulta.proyectodaa.funciones;
  */
 public class Paciente {
     protected String nombre;
-    protected char genero;
+    protected String genero;
     protected int edadSemana;
     protected String direccion;
     protected String comentario;
     
-    public Paciente(String nombre, char genero, int edadSemana, String direccion, String comentario){
+    public Paciente(String nombre, String genero, int edadSemana, String direccion, String comentario){
         super();
         this.nombre = nombre;
         this.genero = genero;
@@ -28,11 +28,11 @@ public class Paciente {
         this.nombre = nombre;
     }
 
-    public char getGenero() {
+    public String getGenero() {
         return genero;
     }
 
-    public void setGenero(char genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
     }
 
