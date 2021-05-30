@@ -9,15 +9,14 @@ public class Paciente {
     protected String genero;
     protected int edadSemana;
     protected String direccion;
-    protected String comentario;
+    protected String comentario;  
     
-    public Paciente(String nombre, String genero, int edadSemana, String direccion, String comentario){
-        super();
-        this.nombre = nombre;
-        this.genero = genero;
-        this.edadSemana = edadSemana;
-        this.direccion = direccion;
-        this.comentario = comentario;
+    public Paciente(){
+        this.nombre = "";
+        this.genero = "";
+        this.edadSemana = 0;
+        this.direccion = "";
+        this.comentario = "";
     }
     
     public String getNombre(){

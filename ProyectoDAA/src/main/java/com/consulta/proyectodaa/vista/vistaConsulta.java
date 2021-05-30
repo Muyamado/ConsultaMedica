@@ -1,15 +1,18 @@
 package com.consulta.proyectodaa.vista;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Enumeration;
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
+import com.consulta.proyectodaa.funciones.PacienteyVista;
 
 /**
  *
  * @author Jose
  */
-public class vistaConsulta extends javax.swing.JFrame {
-
+public class vistaConsulta extends javax.swing.JFrame implements ActionListener {
+    
     public vistaConsulta() {
         initComponents();
     }
@@ -46,6 +49,11 @@ public class vistaConsulta extends javax.swing.JFrame {
         jDialog1.setSize(new java.awt.Dimension(709, 300));
 
         jTextField4.setText("jTextField4");
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -90,6 +98,12 @@ public class vistaConsulta extends javax.swing.JFrame {
 
         jLabel5.setText("Direccion :");
 
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+
         jLabel6.setText("Comentarios :");
 
         jTextArea1.setColumns(20);
@@ -105,6 +119,11 @@ public class vistaConsulta extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -199,16 +218,31 @@ public class vistaConsulta extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String nombre = jTextField1.getText();
+        /*String nombre = jTextField1.getText();
         String genero = getNombreBoton(buttonGroup1);
         int edadSemana = Integer.parseInt(jTextField2.getText());
         String direccion = jTextField3.getText();
         String comentarios = jTextArea1.getText();
         
         jTextField4.setText("nombre: "+ nombre +"\ngenero: "+ genero +"\nedad: "+ edadSemana +"\ndireccion: "+ direccion +"\ncomentarios: "+comentarios+"");
-        jDialog1.setVisible(true);
+        jDialog1.setVisible(true);*/
+        
+        PacienteyVista datos = new PacienteyVista();
+        
+        if(evt.getSource() == jButton1){
+            String nombre = jTextField1.getText();
+            String genero = getNombreBoton(buttonGroup1);
+            int edadSemana = Integer.parseInt(jTextField2.getText());
+            String direccion = jTextField3.getText();
+            String comentarios = jTextArea1.getText();
+            
+            datos.getInfoPaciente(nombre, genero, edadSemana, direccion, comentarios);
+            
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
     public String getNombreBoton(ButtonGroup buttonGroup1){
         for(Enumeration<AbstractButton> botones = buttonGroup1.getElements(); botones.hasMoreElements();){
             AbstractButton btn = botones.nextElement();
@@ -223,6 +257,18 @@ public class vistaConsulta extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -280,4 +326,10 @@ public class vistaConsulta extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+        
+    }
 }
